@@ -1,0 +1,23 @@
+
+=== 1. TotalSizeVisitor
+city-hall total : 82,926,328 bytes
+budget subtree  : 6,098,576 bytes
+
+=== 2. SearchVisitor  (name glob = "*.log", size >= 1048576 B)
+  budget/2025/audit.log
+  logs/access.log
+  logs/archive/access-2025.log
+-- same search started at budget/ (paths are relative to the chosen root):
+  2025/audit.log
+
+=== 3. StatisticsVisitor
+city-hall : TreeStatistics[fileCount=12, directoryCount=9, maxDepth=4]
+budget    : TreeStatistics[fileCount=5, directoryCount=3, maxDepth=2]
+city-hall (same instance, run again) : TreeStatistics[fileCount=12, directoryCount=9, maxDepth=4]
+
+=== 4. Rejected mutations (tree stays unchanged)
+REJECTED negative size                    -> File size must be >= 0, got -10
+REJECTED duplicate sibling 'readme.txt'   -> Duplicate name: 'city-hall' already contains 'readme.txt'
+REJECTED second parent for 'budget'       -> 'budget' already belongs to 'city-hall'; remove it there first
+REJECTED cycle: city-hall inside budget   -> Cycle: 'city-hall' cannot be placed inside itself or its descendant 'budget'
+total after rejected changes : 82,926,328 bytes
