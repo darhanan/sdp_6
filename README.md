@@ -2,6 +2,8 @@
 
 **Student:** Darkhan Tynyyshtyk · **Group:** SE-2523 · **Course:** ShP-2216 Software Design Patterns
 
+**Repository:** https://github.com/darhanan/sdp_6
+
 An in-memory hierarchical file system (`FileNode`, `DirectoryNode`) with three independent
 operations implemented as visitors: `TotalSizeVisitor`, `SearchVisitor`, `StatisticsVisitor`.
 
